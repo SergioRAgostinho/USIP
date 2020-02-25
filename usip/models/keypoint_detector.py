@@ -6,10 +6,10 @@ from collections import OrderedDict
 import os
 import random
 
-from models import networks
-from models import losses
-from data import augmentation
-from models import operations
+from . import networks
+from . import losses
+from ..util import augmentation
+from . import operations
 
 
 class ModelDetector():
@@ -177,6 +177,7 @@ class ModelDetector():
                                                                                 (self.src_sn, self.dst_sn),
                                                                                 (self.src_node, self.dst_node),
                                                                                 is_train=True, epoch=epoch)
+            import ipdb; ipdb.set_trace()
 
             # transform src to self.src_keypoints_transformed
             self.src_keypoints_transformed = torch.matmul(self.src_R_dst, self.src_keypoints)  # Bx3x3 * Bx3xM -> Bx3xM

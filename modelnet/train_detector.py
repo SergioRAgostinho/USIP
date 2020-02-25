@@ -14,9 +14,10 @@ import torch.optim as optim
 import random
 import numpy as np
 
-from models.keypoint_detector import ModelDetector
 from data.modelnet_shrec_loader import ModelNet_Shrec_Loader
-from util.visualizer import Visualizer
+
+from usip.models.keypoint_detector import ModelDetector
+from usip.util.visualizer import Visualizer
 
 
 if __name__=='__main__':

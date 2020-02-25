@@ -13,7 +13,7 @@ import torchvision
 import matplotlib.pyplot as plt
 import h5py
 
-from data.augmentation import *
+from usip.util.augmentation import *
 
 
 # Read numpy array data and label from h5_filename

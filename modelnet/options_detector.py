@@ -1,9 +1,10 @@
 import argparse
 import os
-from util import util
 import torch
 import GPUtil
 import numpy as np
+
+from usip.util import util
 
 class Options():
     def __init__(self):
@@ -14,15 +15,15 @@ class Options():
         self.parser.add_argument('--gpu_ids', type=str, default='0', help='auto or gpu_ids seperated by comma.')
 
         self.parser.add_argument('--dataset', type=str, default='modelnet', help='modelnet / shrec / shapenet')
-        self.parser.add_argument('--dataroot', default='/ssd/jiaxin/USIP_datasets/modelnet40-normal_numpy/', help='path to images & laser point clouds')
+        self.parser.add_argument('--dataroot', default='/home/sergio/Data/usip/datasets/modelnet40-normal_numpy/', help='path to images & laser point clouds')
         self.parser.add_argument('--classes', type=int, default=40, help='ModelNet40 or ModelNet10')
         self.parser.add_argument('--name', type=str, default='train', help='name of the experiment. It decides where to store samples and models')
         self.parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
 
-        self.parser.add_argument('--batch_size', type=int, default=4, help='input batch size')
+        self.parser.add_argument('--batch_size', type=int, default=2, help='input batch size')
         self.parser.add_argument('--input_pc_num', type=int, default=5000, help='# of input points')
         self.parser.add_argument('--surface_normal_len', type=int, default=3, help='3 - surface normal, 1 - reflectance')
-        self.parser.add_argument('--nThreads', default=8, type=int, help='# threads for loading data')
+        self.parser.add_argument('--nThreads', default=4, type=int, help='# threads for loading data')
 
         self.parser.add_argument('--display_winsize', type=int, default=256, help='display window size')
         self.parser.add_argument('--display_id', type=int, default=1, help='window id of the web display')

@@ -1,3 +1,6 @@
+# Remove other trash
+checkpoints
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
