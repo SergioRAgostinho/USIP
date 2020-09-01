@@ -1,5 +1,5 @@
 from os.path import join as pjoin
-from setuptools import setup
+from setuptools import setup, find_packages
 from torch.utils.cpp_extension import CUDAExtension, BuildExtension
 
 def install_requires():
@@ -15,7 +15,7 @@ setup(
     name="usip",
     version="0.1.0",
     install_requires=install_requires(),
-    packages=["usip"],
+    packages=find_packages(),
     ext_modules=[
         CUDAExtension('index_max', [
             pjoin('ext','index_max','index_max.cpp'),
